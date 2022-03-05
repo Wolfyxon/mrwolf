@@ -1,0 +1,7 @@
+{
+    "user_id":{
+        "tag":"user#1234",
+        "messageCount":1,
+        "warns":[{"reason":"spamming","mod":"moderator_id"}]
+    }
+}

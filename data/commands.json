@@ -1,0 +1,116 @@
+[
+{"name":"help","description":"Get a list of my commands and other stuff"},
+{
+    "name":"mute",
+    "description":"Mutes a user from chatting for specific time, uses timeout option",
+    "options":[
+        {
+            "name":"user",
+            "description":"User to mute.",
+            "type":6,
+            "required":true
+        },
+        {
+            "name":"duration",
+            "description":"Duration of the mute, example 5m, 1h, 30s",
+            "type":3,
+            "required":true
+        },
+        {
+            "name":"reason",
+            "description":"Reason of the mute, example spamming",
+            "type":3,
+            "required":false
+        }
+]
+},
+{
+    "name":"warn",
+    "description":"Give a warning to user, they will loose access to all channels until they accept the warning",
+    "options":[
+        {
+            "name":"user",
+            "description":"User to warn.",
+            "type":6,
+            "required":true
+        },
+        {
+            "name":"reason",
+            "description":"Reason of the warn, example spamming.",
+            "type":3,
+            "required":true
+        }
+]
+},
+{
+    "name":"suggest",
+    "description":"Submit a suggestion",
+    "options":[
+        {
+            "name":"description",
+            "description":"Describe your suggestion",
+            "type":3,
+            "required":true
+        }
+]
+},
+{
+    "name":"tag",
+    "description":"Get meme for response",
+    "options":[
+        {
+            "name":"tag",
+            "description":"meme id to send",
+            "type":3,
+            "required":true
+        }
+]
+},
+{
+    "name":"say",
+    "description":"woof",
+    "options":[
+        {
+            "name":"message",
+            "description":"What do you want me to say",
+            "type":3,
+            "required":true
+        }
+]
+},
+{
+    "name":"report",
+    "description":"Report a problem/rule break on this server DO NOT ABUSE",
+    "options":[
+        {
+            "name":"description",
+            "description":"What/who do you want to report",
+            "type":3,
+            "required":true
+        }
+]
+},
+{
+    "name":"roll",
+    "description":"Rolls a dice, you can also change its size",
+    "options":[
+        {
+            "name":"minimum",
+            "description":"Minimum number",
+            "type":4,
+            "required":false
+        },
+        {
+            "name":"maximum",
+            "description":"Maximum number",
+            "type":4,
+            "required":false
+        }
+]
+},
+{"name":"woof","description":"woof"},
+{"name":"reload","description":"Restarts my brain"},
+{"name":"funfact","description":"get some random fun fact from database"},
+{"name":"slashreload","description":"clear and register again my slash commands"},
+{"name":"shutdown","description":"shutdowns my brain"}
+]
