@@ -112,5 +112,6 @@
 {"name":"reload","description":"Restarts my brain"},
 {"name":"funfact","description":"get some random fun fact from database"},
 {"name":"slashreload","description":"clear and register again my slash commands"},
-{"name":"shutdown","description":"shutdowns my brain"}
+{"name":"shutdown","description":"shutdowns my brain"},
+{"name":"about","description":"some info about me"}
 ]
