@@ -72,11 +72,26 @@ async function registerCommands(guild) {
 		console.log("Error registering slash commands: " + e)
 	}
 }
+async function registerMenus(guild){
+	const rest = new REST({"version":"9"}).setToken(process.env["TOKEN"])
+	var menus = [
+		{"name":"translate","type":3}
+	]//will be stored in file if there's more context menus
+
+	try {
+		console.log("[=] Registering context menus...")
+		await rest.put(Routes.applicationGuildCommands(client.user.id,guild.id),{body: menus})
+		.then(() => console.log("[=] Registered"))
+	}
+	catch(e) {
+		console.error("[=] Registering context menus failed: "+e)
+	}
+}
+
 
 var rateLimitedUsers = ["userid"]
 var rateLimitedUsers_btn = ["userid"]
 client.on('interactionCreate', async interaction => {
-
 	if (interaction.member.user.bot) { return };
 	if (interaction.isCommand()){	
 	if (!rateLimitedUsers.includes(interaction.member.id)) {
@@ -114,10 +129,20 @@ if (interaction.isButton()){
 		}
 	})
 }
-	else {
 
+}
+if(interaction.isContextMenu){
+	const { commandName } = interaction;
+	console.log(interaction.member.user.tag + " used: /" + commandName)
+
+	var script = "./scripts/contextMenus/" + commandName + ".js";
+	if (fs.existsSync(script)) {
+		eval(fs.readFileSync(script, "utf-8"));
 	}
-
+	else {
+		console.log("ERROR: " + script + " not found")
+		interaction.reply({ content: ':warning: Option not found!', ephemeral: true });
+	}
 }
 
 });

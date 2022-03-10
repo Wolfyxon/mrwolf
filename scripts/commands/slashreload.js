@@ -4,6 +4,7 @@ if(config["masters"].includes(interaction.member.user.id)){
 	client.application.commands.set([]);
 
     setTimeout(function(){registerCommands(interaction.guild)},4000)
+    registerMenus(interaction.guild)
 }
 else {
     interaction.reply({content:templateMsg["noPermsMaster"], ephemeral: true })
